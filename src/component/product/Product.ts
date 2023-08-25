@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Product } from 'src/dataTypes/Product';
 
 
 @Component({
@@ -7,8 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ["./product.scss"]
 })
 export class ProductComponent {
-  title = "product"
-  anyField = "text from product"
+  @Input() product: Product
 
 
 }
