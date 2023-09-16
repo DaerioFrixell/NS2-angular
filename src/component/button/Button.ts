@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ["./button.scss"]
 })
 export class ButtonComponent {
-  title = 'angularTestApp';
+  title = 'show details';
+
 }

@@ -1,10 +1,36 @@
 <div class="product">
   <div class="product__image-wrapper">
-    <img class="product__image-wrapper__image" [src]="product.image" alt="product.title">
+    <img
+      class="product__image-wrapper__image"
+      [src]="product.image"
+      [alt]="product.title"
+    />
   </div>
-  <h1>product: {{product.title}}</h1>
 
+  <p class="product__props product__title">
+    product: {{product.title}}
+  </p>
 
+  <p class="product__props">
+    price: {{product.price | currency}}
+  </p>
 
+  <!-- <Button-comp>show details</Button-comp>  как прокинуть пропсы??? -->
+  <div class="product__button-wrapper">
+    <button
+      class="button"
+      (click)="details = !details"
+      [ngClass]="{button_active: details}"
+    >
+      {{ details ? "Hide" : "Show"}} details
+    </button>
+  </div>
 
+  <p class="product__props" *ngIf="details">
+    description: {{product.description}}
+  </p>
+
+  <p class="product__props">
+    rate: {{product.rating.rate | number: "1.2-4"}}
+  </p>
 </div>

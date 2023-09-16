@@ -3,10 +3,10 @@ import { mockProducts } from 'src/data/product/Products'
 import { Products } from 'src/dataTypes/Product'
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.html',
-  styleUrls: ['./app.scss'],
+  selector: 'productList-component',
+  templateUrl: './productList.html',
+  styleUrls: ['./productList.scss'],
 })
-export class AppComponent {
+export class ProductListComponent {
   allProduct: Products = mockProducts
 }
