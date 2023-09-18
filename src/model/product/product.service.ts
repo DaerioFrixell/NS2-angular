@@ -1,19 +1,27 @@
-import { HttpClient, HttpParams } from '@angular/common/http'
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { Observable } from 'rxjs'
+import { Observable, catchError, delay, throwError } from 'rxjs'
 import { Products } from 'src/dataTypes/Product'
+import { ErrorService } from '../error/error.service'
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private errorService: ErrorService) {}
+
+  private errorHandler(error: HttpErrorResponse) {
+    this.errorService.handle(error.message)
+    return throwError(() => error.message)
+  }
 
   getAll(): Observable<Products> {
-    return this.http.get<Products>('https://fakestoreapi.com/products', {
-      params: new HttpParams({
-        fromObject: { limit: 5 },
-      }),
-    })
+    return this.http
+      .get<Products>('https://fakestoreapi.com/products', {
+        params: new HttpParams({
+          fromObject: { limit: 5 },
+        }),
+      })
+      .pipe(delay(1000), catchError(this.errorHandler))
   }
 }

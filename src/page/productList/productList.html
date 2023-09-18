@@ -1,4 +1,6 @@
+<p *ngIf="loading" class="loading">loading...</p>
+
 <product-component
-  *ngFor="let item_product of allProducts"
+  *ngFor="let item_product of allProducts$ | async"
   [product]="item_product"
 ></product-component>

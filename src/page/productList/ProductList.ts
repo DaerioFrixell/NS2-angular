@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { mockProducts } from 'src/data/product/Products'
+import { Observable, tap } from 'rxjs'
 import { Products } from 'src/dataTypes/Product'
 import { ProductService } from 'src/model/product/product.service'
 
@@ -9,13 +9,16 @@ import { ProductService } from 'src/model/product/product.service'
   styleUrls: ['./productList.scss'],
 })
 export class ProductListComponent implements OnInit {
-  allProducts: Products = []
-
   constructor(private productService: ProductService) {}
 
+  allProducts$: Observable<Products>
+
+  loading = false
+
   ngOnInit() {
-    this.productService.getAll().subscribe((getAllProducts) => {
-      this.allProducts = getAllProducts
-    })
+    this.loading = true
+    this.allProducts$ = this.productService
+      .getAll()
+      .pipe(tap(() => (this.loading = false)))
   }
 }
