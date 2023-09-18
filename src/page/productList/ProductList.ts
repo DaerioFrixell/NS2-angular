@@ -15,6 +15,8 @@ export class ProductListComponent implements OnInit {
 
   loading = false
 
+  term = ''
+
   ngOnInit() {
     this.loading = true
     this.allProducts$ = this.productService

@@ -1,0 +1,26 @@
+.error-global {
+  display: flex;
+  width: 100vw;
+  height: 4rem;
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: rgb(246, 62, 62);
+
+  &__content {
+    margin: 0 auto;
+    width: 100%;
+    align-self: center;
+    text-align: center;
+  }
+
+  &__close {
+    font-size: 1.6rem;
+    padding: 0 1rem;
+    font-weight: 600;
+    font-family: sans-serif;
+
+    align-self: center;
+    cursor: default;
+  }
+}

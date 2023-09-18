@@ -1,6 +1,12 @@
-<p *ngIf="loading" class="loading">loading...</p>
+<div class="productList">
+  <p *ngIf="loading" class="loading">loading...</p>
 
-<product-component
-  *ngFor="let item_product of allProducts$ | async"
-  [product]="item_product"
-></product-component>
+  <input class="input-default" type="text" placeholder="search..." [(ngModel)]="term" />
+
+  <div *ngIf="allProducts$ | async as products">
+    <product-component
+      *ngFor="let item_product of products | filterProduct: term "
+      [product]="item_product"
+    ></product-component>
+  </div>
+</div>
