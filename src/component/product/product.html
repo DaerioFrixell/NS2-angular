@@ -7,13 +7,9 @@
     />
   </div>
 
-  <p class="product__props product__title">
-    product: {{product.title}}
-  </p>
+  <p class="product__props product__title">product: {{product.title}}</p>
 
-  <p class="product__props">
-    price: {{product.price | currency}}
-  </p>
+  <p class="product__props">price: {{product.price | currency}}</p>
 
   <!-- <Button-comp>show details</Button-comp>  как прокинуть пропсы??? -->
   <div class="product__button-wrapper">
@@ -26,11 +22,7 @@
     </button>
   </div>
 
-  <p class="product__props" *ngIf="details">
-    description: {{product.description}}
-  </p>
+  <p class="product__props" *ngIf="details">description: {{product.description}}</p>
 
-  <p class="product__props">
-    rate: {{product.rating.rate | number: "1.2-4"}}
-  </p>
+  <p class="product__props">rate: {{product.rating.rate | number: "1.2-4"}}</p>
 </div>
