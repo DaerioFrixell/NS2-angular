@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ModalComponent } from 'src/component/modal/Modal'
 import { CreateFormComponent } from 'src/component/createForm/CreateForm'
 import { FocusDirective } from './directives/focus.directive'
+import { ClickStopPropagation } from './directives/clickStopPropagation.directive'
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FocusDirective } from './directives/focus.directive'
     ModalComponent,
     CreateFormComponent,
     FocusDirective,
+    ClickStopPropagation,
   ],
   imports: [
     BrowserModule,

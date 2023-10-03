@@ -2,6 +2,9 @@
 <h1 class="app-title">angular test app</h1>
 <productList-component></productList-component>
 
-<modal-component asd="create new product">
+<modal-component
+  *ngIf="modalService.isVisible$ |async"
+  title="create new product"
+>
   <createForm-component></createForm-component>
 </modal-component>
