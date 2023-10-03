@@ -1,6 +1,6 @@
-<div class="modal-wrapper">
-  <div class="modal">
-    <p class="modal__title">{{asd | titlecase}}</p>
+<div class="modal-wrapper" (click)="modalService.closeModal()">
+  <div class="modal" click-stop-propagation>
+    <p class="modal__title">{{title | titlecase}}</p>
     <ng-content></ng-content>
   </div>
 </div>
