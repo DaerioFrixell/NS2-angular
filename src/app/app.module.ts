@@ -12,6 +12,7 @@ import { ProductFilterPipe } from 'src/model/product/producrtFilter.pipe'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ModalComponent } from 'src/component/modal/Modal'
 import { CreateFormComponent } from 'src/component/createForm/CreateForm'
+import { FocusDirective } from './directives/focus.directive'
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CreateFormComponent } from 'src/component/createForm/CreateForm'
     ProductFilterPipe,
     ModalComponent,
     CreateFormComponent,
+    FocusDirective,
   ],
   imports: [
     BrowserModule,

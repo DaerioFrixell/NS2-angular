@@ -1,18 +1,49 @@
 .form {
-  &__input {
-    font-size: 1.4rem;
-    margin: 0 10rem;
-    width: 50rem;
-    height: 4rem;
-    border-radius: 3px;
-    border: none;
-    padding: 1rem;
-    border: 1px solid rgba(126, 122, 122, 0.699);
+  width: 50rem;
+  margin: 0 auto;
+  text-align: center;
+}
 
-    &:focus {
-      outline: none;
-      border: 2px solid rgb(152, 170, 228);
-      color: #333;
+.input {
+  font-size: 1.4rem;
+  margin: 1rem 0;
+  width: 50rem;
+  height: 4rem;
+  border-radius: 3px;
+  border: none;
+  padding: 1rem;
+  border: 1px solid rgba(126, 122, 122, 0.699);
+
+  &:focus {
+    outline: none;
+    border: 2px solid rgb(152, 170, 228);
+    color: #333;
+  }
+}
+
+.wrapper-button {
+  width: 10rem;
+  height: 3rem;
+  margin: 1.6rem auto;
+
+  &__button {
+    width: 100%;
+    height: 100%;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(208, 215, 238);
+    transition: all 0.2 s;
+
+    &:active {
+      background-color: rgb(163, 181, 238);
     }
+  }
+}
+
+.field {
+  &__error {
+    color: rgb(245, 112, 112);
+    font-weight: 600;
   }
 }

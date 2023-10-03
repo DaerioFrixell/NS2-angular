@@ -1,3 +1,17 @@
-<form class="form" [formGroup]="form">
-  <input class="form__input" type="text" placeholder="введите название" />
+<form class="form" [formGroup]="form" (ngSubmit)="submit()">
+  <input
+    class="input"
+    type="text"
+    placeholder="введите название"
+    formControlName="title"
+    appFocus
+  />
+
+  <p class="field__error" *ngIf="getTitle()">error</p>
+
+  <div class="wrapper-button">
+    <button class="wrapper-button__button" type="submit">
+      создать
+    </button>
+  </div>
 </form>
