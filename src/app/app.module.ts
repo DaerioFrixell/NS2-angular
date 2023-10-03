@@ -9,7 +9,9 @@ import { ProductComponent } from 'src/component/product/Product'
 import { ProductListComponent } from 'src/page/productList/ProductList'
 import { ErrorComponent } from 'src/component/error/error'
 import { ProductFilterPipe } from 'src/model/product/producrtFilter.pipe'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { ModalComponent } from 'src/component/modal/Modal'
+import { CreateFormComponent } from 'src/component/createForm/CreateForm'
 
 @NgModule({
   declarations: [
@@ -19,8 +21,16 @@ import { FormsModule } from '@angular/forms'
     ProductListComponent,
     ErrorComponent,
     ProductFilterPipe,
+    ModalComponent,
+    CreateFormComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
