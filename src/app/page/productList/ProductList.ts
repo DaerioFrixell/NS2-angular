@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { Observable, tap } from 'rxjs'
 import { ProductServiceRequest } from 'src/app/service/product.service'
-import { Products } from 'src/dataTypes/Product'
 
 @Component({
   selector: 'productList-component',
