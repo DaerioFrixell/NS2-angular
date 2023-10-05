@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { ProductServiceRequest } from 'src/app/service/product.service'
 
 @Component({
   selector: 'createForm-component',
@@ -14,13 +15,25 @@ export class CreateFormComponent implements OnInit {
     ]),
   })
 
-  constructor() {}
+  constructor(private productService: ProductServiceRequest) {}
 
   ngOnInit() {}
 
   submit() {
-    console.log(this.form.value)
-    console.log(this.form.controls.title.errors?.minLength)
+    const newTitle = this.form.controls.title.value
+    if (newTitle) {
+      this.productService.create({
+        title: newTitle,
+        price: 13.5,
+        description: 'lorem ipsum set',
+        image: 'https://i.pravatar.cc',
+        category: 'electronic',
+        rating: {
+          rate: 3,
+          count: 3,
+        },
+      })
+    }
   }
 
   getTitle() {

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { ModalService } from 'src/model/modal/modal.service'
+import { ModalService } from 'src/app/service/modal.service'
 
 @Component({
   selector: 'modal-component',

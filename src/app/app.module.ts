@@ -8,12 +8,12 @@ import { ButtonComponent } from 'src/component/button/Button'
 import { ProductComponent } from 'src/component/product/Product'
 import { ProductListComponent } from 'src/page/productList/ProductList'
 import { ErrorComponent } from 'src/component/error/error'
-import { ProductFilterPipe } from 'src/model/product/producrtFilter.pipe'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ModalComponent } from 'src/component/modal/Modal'
 import { CreateFormComponent } from 'src/component/createForm/CreateForm'
 import { FocusDirective } from './directives/focus.directive'
 import { ClickStopPropagation } from './directives/clickStopPropagation.directive'
+import { ProductFilterPipe } from './pipe/producrtFilter.pipe'
 
 @NgModule({
   declarations: [

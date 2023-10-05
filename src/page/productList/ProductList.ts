@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Observable, tap } from 'rxjs'
+import { ProductServiceRequest } from 'src/app/service/product.service'
 import { Products } from 'src/dataTypes/Product'
-import { ProductService } from 'src/model/product/product.service'
 
 @Component({
   selector: 'productList-component',
@@ -9,7 +9,7 @@ import { ProductService } from 'src/model/product/product.service'
   styleUrls: ['./productList.scss'],
 })
 export class ProductListComponent implements OnInit {
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductServiceRequest) {}
 
   allProducts$: Observable<Products>
 
