@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { mockProducts } from 'src/data/product/Products'
 import { Products } from 'src/dataTypes/Product'
-import { ModalService } from 'src/model/modal/modal.service'
+import { ModalService } from './service/modal.service'
 
 @Component({
   selector: 'app-root',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Observable, tap } from 'rxjs'
+import { ProductServiceRequest } from 'src/app/service/product.service'
 import { Products } from 'src/dataTypes/Product'
-import { ProductService } from 'src/model/product/product.service'
 
 @Component({
   selector: 'productList-component',
@@ -9,9 +9,9 @@ import { ProductService } from 'src/model/product/product.service'
   styleUrls: ['./productList.scss'],
 })
 export class ProductListComponent implements OnInit {
-  constructor(private productService: ProductService) {}
+  constructor(public productService: ProductServiceRequest) {}
 
-  allProducts$: Observable<Products>
+  // allProducts$: Observable<Products>
 
   loading = false
 
@@ -19,8 +19,12 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true
-    this.allProducts$ = this.productService
-      .getAll()
-      .pipe(tap(() => (this.loading = false)))
+    // this.allProducts$ = this.productService
+    //   .getAll()
+    //   .pipe(tap(() => (this.loading = false)))
+
+    this.productService.getAll().subscribe((_) => {
+      this.loading = false
+    })
   }
 }

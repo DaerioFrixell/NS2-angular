@@ -1,6 +1,7 @@
 <error-component></error-component>
 <h1 class="app-title">angular test app</h1>
-<productList-component></productList-component>
+<a routerLink="/product">product</a> <br />
+<a routerLink="/asd">anyRout</a>
 
 <modal-component
   *ngIf="modalService.isVisible$ |async"
@@ -8,3 +9,5 @@
 >
   <createForm-component></createForm-component>
 </modal-component>
+
+<router-outlet></router-outlet>
