@@ -14,6 +14,7 @@ import { CreateFormComponent } from 'src/component/createForm/CreateForm'
 import { FocusDirective } from './directives/focus.directive'
 import { ClickStopPropagation } from './directives/clickStopPropagation.directive'
 import { ProductFilterPipe } from './pipe/producrtFilter.pipe'
+import { AsdComponent } from 'src/page/asd/Asd'
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ProductFilterPipe } from './pipe/producrtFilter.pipe'
     CreateFormComponent,
     FocusDirective,
     ClickStopPropagation,
+    AsdComponent,
   ],
   imports: [
     BrowserModule,
