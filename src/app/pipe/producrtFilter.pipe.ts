@@ -6,6 +6,9 @@ import { Products } from 'src/dataTypes/Product'
 })
 export class ProductFilterPipe implements PipeTransform {
   transform(products: Products, search: string): Products {
-    return products.filter((p) => p.title.toLowerCase().includes(search.toLowerCase()))
+    if (search.length === 0) return products
+    return products.filter((p) =>
+      p.title.toLowerCase().includes(search.toLowerCase())
+    )
   }
 }

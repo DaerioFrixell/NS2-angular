@@ -8,9 +8,9 @@
     [(ngModel)]="term"
   />
 
-  <div *ngIf="allProducts$ | async as products">
+  <div *ngIf="productService.products">
     <product-component
-      *ngFor="let item_product of products | filterProduct: term "
+      *ngFor="let item_product of productService.products | filterProduct: term"
       [product]="item_product"
     ></product-component>
   </div>

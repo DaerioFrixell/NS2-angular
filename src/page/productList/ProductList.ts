@@ -9,9 +9,9 @@ import { Products } from 'src/dataTypes/Product'
   styleUrls: ['./productList.scss'],
 })
 export class ProductListComponent implements OnInit {
-  constructor(private productService: ProductServiceRequest) {}
+  constructor(public productService: ProductServiceRequest) {}
 
-  allProducts$: Observable<Products>
+  // allProducts$: Observable<Products>
 
   loading = false
 
@@ -19,8 +19,12 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true
-    this.allProducts$ = this.productService
-      .getAll()
-      .pipe(tap(() => (this.loading = false)))
+    // this.allProducts$ = this.productService
+    //   .getAll()
+    //   .pipe(tap(() => (this.loading = false)))
+
+    this.productService.getAll().subscribe((_) => {
+      this.loading = false
+    })
   }
 }

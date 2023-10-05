@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { ModalService } from 'src/app/service/modal.service'
 import { ProductServiceRequest } from 'src/app/service/product.service'
 
 @Component({
@@ -15,15 +16,17 @@ export class CreateFormComponent implements OnInit {
     ]),
   })
 
-  constructor(private productService: ProductServiceRequest) {}
+  constructor(
+    private productService: ProductServiceRequest,
+    private modalService: ModalService
+  ) {}
 
   ngOnInit() {}
 
   submit() {
-    const newTitle = this.form.controls.title.value
-    if (newTitle) {
-      this.productService.create({
-        title: newTitle,
+    if (this.form.controls.title.value) {
+      const obj = {
+        title: this.form.controls.title.value,
         price: 13.5,
         description: 'lorem ipsum set',
         image: 'https://i.pravatar.cc',
@@ -32,6 +35,11 @@ export class CreateFormComponent implements OnInit {
           rate: 3,
           count: 3,
         },
+      }
+
+      this.productService.create(obj).subscribe((_) => {
+        console.log(obj)
+        this.modalService.closeModal()
       })
     }
   }
