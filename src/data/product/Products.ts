@@ -1,6 +1,6 @@
-import { Products } from 'src/dataTypes/Product'
+import { Product } from 'src/dataTypes/Product'
 
-export const mockProducts: Products = [
+export const mockProducts: Product[] = [
   {
     id: 1,
     title:

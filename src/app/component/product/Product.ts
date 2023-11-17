@@ -8,6 +8,6 @@ import { Product } from 'src/dataTypes/Product'
 })
 export class ProductComponent {
   @Input() product: Product
-
-  details = false
+  
+  public details = false;
 }
