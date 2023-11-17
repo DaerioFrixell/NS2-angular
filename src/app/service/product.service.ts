@@ -5,7 +5,7 @@ import {
 } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Observable, catchError, delay, tap, throwError } from 'rxjs'
-import { Product, Products } from 'src/dataTypes/Product'
+import { Product } from 'src/dataTypes/Product'
 import { ErrorService } from './error.service'
 
 @Injectable({
@@ -22,11 +22,11 @@ export class ProductServiceRequest {
     return throwError(() => error.message)
   }
 
-  products: Products = []
+  products: Product[] = []
 
-  getAll(): Observable<Products> {
+  getAll(): Observable<Product[]> {
     return this.http
-      .get<Products>('https://fakestoreapi.com/products', {
+      .get<Product[]>('https://fakestoreapi.com/products', {
         params: new HttpParams({
           fromObject: { limit: 5 },
         }),

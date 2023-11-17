@@ -6,8 +6,8 @@ import { ModalService } from 'src/app/service/modal.service'
   templateUrl: './modal.html',
   styleUrls: ['./modal.scss'],
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent {
   @Input() title: string
+
   constructor(public modalService: ModalService) {}
-  ngOnInit() {}
 }

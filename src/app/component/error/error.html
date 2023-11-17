@@ -1,4 +1,5 @@
 <div *ngIf="errorService.error$ | async as error" class="error-global">
   <p class="error-global__content">{{error}}</p>
+  
   <p (click)="errorService.clear()" class="error-global__close">X</p>
 </div>

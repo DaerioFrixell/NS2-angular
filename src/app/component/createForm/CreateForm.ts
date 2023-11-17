@@ -8,7 +8,7 @@ import { ProductServiceRequest } from 'src/app/service/product.service'
   templateUrl: './createForm.html',
   styleUrls: ['./createForm.scss'],
 })
-export class CreateFormComponent implements OnInit {
+export class CreateFormComponent {
   form = new FormGroup({
     title: new FormControl<string>('', [
       Validators.required,
@@ -17,11 +17,9 @@ export class CreateFormComponent implements OnInit {
   })
 
   constructor(
-    private productService: ProductServiceRequest,
+    public productService: ProductServiceRequest,
     private modalService: ModalService
   ) {}
-
-  ngOnInit() {}
 
   submit() {
     if (this.form.controls.title.value) {

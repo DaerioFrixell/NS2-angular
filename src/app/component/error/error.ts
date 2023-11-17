@@ -6,7 +6,6 @@ import { ErrorService } from 'src/app/service/error.service'
   templateUrl: './error.html',
   styleUrls: ['./error.scss'],
 })
-export class ErrorComponent implements OnInit {
+export class ErrorComponent {
   constructor(public errorService: ErrorService) {}
-  ngOnInit() {}
 }

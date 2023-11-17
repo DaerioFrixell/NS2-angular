@@ -1,0 +1,22 @@
+<error-component></error-component>
+
+<title-ui [title2]="title"></title-ui>
+
+<links-ui 
+    [linkValue]="links.home"
+    [linkPath]="links.path">
+</links-ui>
+<br />
+
+<a routerLink="/product">product</a> 
+<br />
+
+<a routerLink="/anyForm">anyRout</a>
+
+<modal-component
+  *ngIf="modalService.isVisible$ |async"
+  title="create new product">
+  <createForm-component></createForm-component>
+</modal-component>
+
+<router-outlet></router-outlet>
