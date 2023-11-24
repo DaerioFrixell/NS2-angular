@@ -9,8 +9,19 @@ export class MainPageComponent {
     constructor(public modalService: ModalService) {}
 
     public title = "asd"
-    public links = {
-        home: "home",
-        path: ["/"]
-    }
+    
+    public links = [
+        {
+          value: "home",
+          path: ["/"]
+        },
+        {
+          value: "product",
+          path: ["/product"]
+        },
+        {
+          value: "anyForm",
+          path: ["/anyForm"]
+        },
+    ]
 }

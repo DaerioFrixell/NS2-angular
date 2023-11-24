@@ -1,1 +1,3 @@
-<a [routerLink]="linkPath">{{linkValue}}</a>
+<div *ngFor="let link of links">  
+  <a [routerLink]="link.path" >{{link.value}}</a>
+</div>
