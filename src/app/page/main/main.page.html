@@ -3,15 +3,8 @@
 <title-ui [title2]="title"></title-ui>
 
 <links-ui 
-    [linkValue]="links.home"
-    [linkPath]="links.path">
+    [links]="links">
 </links-ui>
-<br />
-
-<a routerLink="/product">product</a> 
-<br />
-
-<a routerLink="/anyForm">anyRout</a>
 
 <modal-component
   *ngIf="modalService.isVisible$ |async"
